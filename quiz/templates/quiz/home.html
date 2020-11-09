@@ -1,29 +1,26 @@
+{% extends 'quiz/base.html' %} {% load static %} {% block content %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz</title>
-  </head>
-  <body>
-    <h1>Quiz List</h1>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Action</th>
-      </tr>
-      {% for data in quiz_data %}
-      <tr>
-        <td>{{data.id}}</td>
-        <td>{{data.title}}</td>
-        <td>
-          {% if data.description %}{{data.description}} {% else %} - {% endif%}
-        </td>
-        <td><a href="/quiz/{{data.id}}/questions/">Start Quiz</a></td>
-      </tr>
-      {% endfor %}
-    </table>
-  </body>
-</html>
+
+<div class="container">
+  <div class="text-center title"><h1>Online Quiz</h1></div>
+  <h3>Quiz List</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    {% for data in quiz_data %}
+    <tr>
+      <td>{{data.id}}</td>
+      <td>{{data.title}}</td>
+      <td>
+        {% if data.description %}{{data.description}} {% else %} - {% endif%}
+      </td>
+      <td><a href="/quiz/{{data.id}}/questions/">Start Quiz</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

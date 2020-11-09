@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz</title>
-  </head>
-  <body>
-    <h2>{{quiz_title}}</h2>
+{% extends 'quiz/base.html' %} {% load static %} {% block content %}
+    <div class="container">
+      <h2 class="text-center pt-4">{{quiz_title}}</h2>
+
+
     {% for question in quiz_questions %}
     <div>
-      <p>{{question}}</p>
-      <input type="text" />
+      <p>{{question.id}}. {{question}}</p>
+      <input type="text" id="{{question.id}}" />
+      <p>{{question.correct_ans}}</p>
     </div>
     <hr />
     {% endfor %}
     <br />
-    <input type="submit" value="Submit" onclick="getAnswer()" />
+    <div class=" text-center ">
+      <input type="submit" value="Submit" class="btn btn-primary" onclick="getAnswer(answerList)" />
+      <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
     <br />
   </body>
-</html>
+    </div>
+{% endblock %}

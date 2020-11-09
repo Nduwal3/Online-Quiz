@@ -1,0 +1,17 @@
+body {
+  background-color: #e9f3ee;
+}
+.container {
+  border: 2px solid;
+  padding: 10px;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.title {
+  color: #52a203;
+}
+
+.submit-div {
+  width: 100%;
+}

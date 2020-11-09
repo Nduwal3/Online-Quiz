@@ -1,8 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import Quiz, Question, Answer
+from .models import Quiz, Question
 
-from .forms import AnswerModelForm
 
 # Create your views here.
 
@@ -16,6 +15,10 @@ def list_all_quiz(request):
 def list_of_quiz_questions(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     quiz_questions = Question.objects.filter(quiz=quiz_id)
+    # for question in  quiz_questions:
+    #     answer = Answer.objects.get(question=question.id)
+    #     print(answer)
+    # print( quiz_questions)
     context = {
     'quiz_questions':quiz_questions,
     'quiz_title':quiz.title,
