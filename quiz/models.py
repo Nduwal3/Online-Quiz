@@ -43,7 +43,7 @@ class Question(models.Model):
 #         return  self.correct_ans 
 
 class QuizParticipant(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
     score = models.IntegerField()
 
