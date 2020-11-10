@@ -3,24 +3,28 @@
 
 <div class="container">
   <div class="text-center title"><h1>Online Quiz</h1></div>
-  <h3>Quiz List</h3>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Action</th>
-    </tr>
-    {% for data in quiz_data %}
-    <tr>
-      <td>{{data.id}}</td>
-      <td>{{data.title}}</td>
-      <td>
-        {% if data.description %}{{data.description}} {% else %} - {% endif%}
-      </td>
-      <td><a href="/quiz/{{data.id}}/questions/">Start Quiz</a></td>
-    </tr>
-    {% endfor %}
+  <h3 class="mt-5">Quiz List</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in quiz_data %}
+      <tr>
+        <td>{{data.id}}</td>
+        <td>{{data.title}}</td>
+        <td>
+          {% if data.description %}{{data.description}} {% else %} - {% endif%}
+        </td>
+        <td><a href="/quiz/{{data.id}}/questions/">Start Quiz</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
   </table>
 </div>
 {% endblock %}

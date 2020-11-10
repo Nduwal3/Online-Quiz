@@ -7,6 +7,9 @@ class QuizParticipantForm(ModelForm):
     class Meta:
         model = QuizParticipant
         fields = ['user']
+        labels = {
+            'user': _('Fullname '),
+        }
     
     def clean(self):
         super().clean()

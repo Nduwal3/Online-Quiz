@@ -17,6 +17,8 @@ def list_all_quiz(request):
 
 def list_of_quiz_questions(request, quiz_id):    
     quiz_questions = Question.objects.filter(quiz=quiz_id)
+    for q in quiz_questions:
+        print(q.correct_ans, q.id)
     if request.method == 'POST':
         quiz_participant_form = QuizParticipantForm(request.POST)
         question_answer_form = QuestionAnswerForm(request.POST)
