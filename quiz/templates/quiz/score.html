@@ -1,0 +1,13 @@
+{% extends 'quiz/base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <p>Final Score</p>
+    </div>
+    <div class="card-body">
+      <p>Thank you {{name}} for taking the Quiz</p>
+      <p>You scored {{total_score}} out of {{full_score}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

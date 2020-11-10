@@ -1,7 +1,7 @@
 {% extends 'quiz/base.html' %} {% load static %} {% block content %}
     <div class="container">
       <h2 class="text-center pt-4">{{quiz_title}}</h2>
-      <form action="">
+      <form action="" method="POST">
         {% csrf_token %}
         {{quiz_participant_form}}
         <hr />

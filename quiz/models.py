@@ -32,18 +32,14 @@ class Question(models.Model):
     def __str__(self):
         return  self.title
 
-# class Answer(models.Model):
-#     question = models.ForeignKey(Question, on_delete=models.CASCADE )
-#     correct_ans = models.CharField(max_length=255)
-#     class Meta:
-#         verbose_name = 'Answer'
-#         verbose_name_plural = 'Answers'
-        
-#     def __str__(self):
-#         return  self.correct_ans 
-
 class QuizParticipant(models.Model):
     user = models.CharField(max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
     score = models.IntegerField()
+    class Meta:
+        verbose_name = 'QuizParticipant'
+        verbose_name_plural = 'QuizParticipants'
+
+    def __str__(self):
+        return  self.user
 
