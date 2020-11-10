@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django.utils.translation import ugettext_lazy as _
 
 from .models import QuizParticipant, Question
 
@@ -19,3 +20,6 @@ class QuestionAnswerForm(ModelForm):
     class Meta:
         model = Question
         fields = ['correct_ans']
+        labels = {
+            'correct_ans': _(''),
+        }
